@@ -25,7 +25,7 @@ jobs:
           server: ${{secrets.SERVER}}
           username: magento2divya
           password: ${{secrets.PASSWORD}}
-          server-dir: ${{secrets.PATH}}/
+          server-dir: /home/magento2divya/public_html/
           exclude: |
             **/vendor/**
             **/var/**
@@ -44,5 +44,5 @@ jobs:
          username: magento2divya
          password: ${{secrets.PASSWORD}}
          port: 22
-         script: ls && cd ${{secrets.PATH}} && pwd && php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento c:f
+         script: ls && cd /home/magento2divya/public_html && pwd && php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento c:f
          timeout: 60000s
