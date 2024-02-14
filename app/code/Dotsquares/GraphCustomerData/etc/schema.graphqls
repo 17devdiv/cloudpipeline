@@ -1,0 +1,39 @@
+type Query {
+    CustomGraphql(prosku: String @doc(description: "prosku and details")): CustomGraphqlOutput @resolver(class: "Dotsquares\\GraphCustomerData\\Model\\Resolver\\Getcustomerdata") @doc(description: "Custom Module Datapassing")
+}
+
+type CustomGraphqlOutput {
+    id: ID! @doc(description: "The ID of the product")
+    sku: String @doc(description: "The SKU of the product")
+    name: String @doc(description: "The name of the product")
+    attribute_set_id: Int @doc(description: "The attribute set ID of the product")
+    price: Float @doc(description: "The price of the product")
+    status: Int @doc(description: "The status of the product")
+    visibility: Int @doc(description: "The visibility of the product")
+    type_id: String @doc(description: "The type ID of the product")
+    created_at: String @doc(description: "The creation date of the product")
+    updated_at: String @doc(description: "The last update date of the product")
+    extension_attributes: CustomGraphqlExtensionAttributes @doc(description: "The extension attributes of the product")
+}
+
+type CustomGraphqlExtensionAttributes {
+    website_ids: [Int] @doc(description: "The website IDs of the product")
+    category_links: [CustomGraphqlCategoryLink] @doc(description: "The category links of the product")
+    stock_item: CustomGraphqlStockItem @doc(description: "The stock item details of the product")
+     thumbnail: String @doc(description: "The thumbnail image URL of the product")
+    # Add other extension attributes here as needed
+}
+
+type CustomGraphqlCategoryLink {
+    position: Int @doc(description: "The position of the category link")
+    category_id: Int @doc(description: "The category ID of the category link")
+}
+
+type CustomGraphqlStockItem {
+    item_id: Int @doc(description: "The item ID of the stock item")
+    product_id: Int @doc(description: "The product ID of the stock item")
+    stock_id: Int @doc(description: "The stock ID of the stock item")
+    qty: Int @doc(description: "The quantity of the stock item")
+    is_in_stock: Boolean @doc(description: "Whether the product is in stock or not")
+    # Add other stock item attributes here as needed
+}

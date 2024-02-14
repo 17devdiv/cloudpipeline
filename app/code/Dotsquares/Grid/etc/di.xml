@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Dotsquares\Grid\Api\BlogstableRepositoryInterface" type="Dotsquares\Grid\Model\BlogstableRepository"/>
+	<preference for="Dotsquares\Grid\Api\Data\BlogstableInterface" type="Dotsquares\Grid\Model\Blogstable"/>
+	<preference for="Dotsquares\Grid\Api\Data\BlogstableSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Dotsquares\Grid\Model\ResourceModel\Blogstable\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">dotsquares_grid_blogstable</argument>
+			<argument name="resourceModel" xsi:type="string">Dotsquares\Grid\Model\ResourceModel\Blogstable\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="dotsquares_grid_blogstable_listing_data_source" xsi:type="string">Dotsquares\Grid\Model\ResourceModel\Blogstable\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

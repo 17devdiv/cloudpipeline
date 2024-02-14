@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Dotsquares::top_level" title="Dotsquares" module="Dotsquares_Grid" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Dotsquares_Grid::dotsquares_grid_blogstable" title="blogstable" module="Dotsquares_Grid" sortOrder="9999" resource="Magento_Backend::content" parent="Dotsquares::top_level" action="dotsquares_grid/blogstable/index"/>
+	</menu>
+</config>
