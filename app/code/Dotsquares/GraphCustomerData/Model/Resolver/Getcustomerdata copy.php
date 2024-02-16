@@ -88,7 +88,7 @@ class Getcustomerdata implements ResolverInterface
             curl_close($ch);
 
             $respnseCover = json_decode($response, TRUE);
-            print_r($response);die;
+            // print_r($respnseCover);die;
             if (isset($respnseCover['extension_attributes']['configurable_product_options']) && $respnseCover['extension_attributes']['configurable_product_options']) {
                 $configureOptions = $respnseCover['extension_attributes']['configurable_product_options'];
 

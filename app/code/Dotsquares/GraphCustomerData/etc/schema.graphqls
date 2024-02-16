@@ -20,7 +20,7 @@ type CustomGraphqlExtensionAttributes {
     website_ids: [Int] @doc(description: "The website IDs of the product")
     category_links: [CustomGraphqlCategoryLink] @doc(description: "The category links of the product")
     stock_item: CustomGraphqlStockItem @doc(description: "The stock item details of the product")
-     thumbnail: String @doc(description: "The thumbnail image URL of the product")
+    thumbnail: String @doc(description: "The thumbnail image URL of the product")
     # Add other extension attributes here as needed
 }
 
